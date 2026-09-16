@@ -1,0 +1,28 @@
+[Defines]
+INF_VERSION                     = 0x00010005
+BASE_NAME                       = Variable
+FILE_GUID                       = 7f2b1d3a-5c4e-4a82-9b1a-3d2f5e6a7b8c
+MODULE_TYPE                     = UEFI_APPLICATION
+VERSION_STRING                  = 1.0
+ENTRY_POINT                     = UefiMain
+
+
+[Sources]
+Variable.c
+
+[Packages]
+MdePkg/MdePkg.dec
+MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+UefiApplicationEntryPoint
+UefiLib
+UefiBootServicesTableLib
+UefiRuntimeServicesTableLib
+MemoryAllocationLib
+BaseMemoryLib
+BaseLib
+PrintLib
+
+[BuildOptions]
+MSFT: *_*_*_CC_FLAGS = /Od
