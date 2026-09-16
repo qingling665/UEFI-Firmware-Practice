@@ -1,0 +1,27 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = HwSmiHomework
+  FILE_GUID                      = ff7a0af1-2b5a-40d9-b8b3-71977fbd3d7c
+  MODULE_TYPE                    = DXE_SMM_DRIVER
+  PI_SPECIFICATION_VERSION       = 0x0001000A
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = HwSmiHomeworkEntryPoint
+
+[Sources]
+  HwSmiHomework.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  KabylakeChipsetPkg/KabylakeChipsetPkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  SmmServicesTableLib
+  IoLib
+
+[Protocols]
+  gEfiSmmPowerButtonDispatch2ProtocolGuid
+
+[Depex]
+  gEfiSmmPowerButtonDispatch2ProtocolGuid
