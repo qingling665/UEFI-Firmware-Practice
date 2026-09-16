@@ -1,0 +1,27 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = TestppiA
+  FILE_GUID                      = BFFFEABA-3443-4919-9F3A-2D4216329EA9
+  MODULE_TYPE                    = PEIM
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = TestppiAEntryPoint
+
+[Sources]
+  TestppiA.c
+  TestppiA.h
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  PeimEntryPoint
+  PeiServicesLib
+  DebugLib
+
+[Ppis]
+  gEfiPeiReadOnlyVariable2PpiGuid
+  gMyTestPpiAGuid
+
+[Depex]
+  gEfiPeiReadOnlyVariable2PpiGuid
