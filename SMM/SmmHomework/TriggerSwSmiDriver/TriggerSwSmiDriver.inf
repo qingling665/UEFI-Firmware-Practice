@@ -1,0 +1,29 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = TriggerSwSmiDriver
+  FILE_GUID                      = 7f3f715f-611c-416d-a1c9-2acb5e9166ed
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = TriggerSwSmiEntryPoint
+
+[Sources]
+  TriggerSwSmiDriver.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  InsydeModulePkg/InsydeModulePkg.dec
+  $(CHIPSET_PKG)/$(CHIPSET_PKG).dec
+  
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  IoLib
+  DebugLib
+[Protocols]
+  gEfiSmmControl2ProtocolGuid
+
+[Depex]
+  gEfiSmmControl2ProtocolGuid
